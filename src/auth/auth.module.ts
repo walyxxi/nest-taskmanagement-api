@@ -12,7 +12,7 @@ import { JwtStrategy } from './jwt-strategy';
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
       secret: 'nestjsjwt',
-      signOptions: { expiresIn: 3600 },
+      signOptions: { expiresIn: 3600 * 24 }, // a day
     }),
     TypeOrmModule.forFeature([UserRepository]),
   ],
